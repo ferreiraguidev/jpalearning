@@ -1,5 +1,6 @@
 package com.example.jpalearning.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -7,6 +8,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import java.util.List;
 
 
 @Builder
@@ -25,5 +27,12 @@ public class User {
     @NotBlank
     private String userEmail;
     private Long cpf;
+
+
+    @ManyToOne
+    @JsonIgnore
+    private Bank customers;
+
+
 
 }

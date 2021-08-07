@@ -17,4 +17,8 @@ public class UserPostRequestBody {
     @NotNull
     private Long cpf;
 
+    private Long bankId;
+
+
+
 }
