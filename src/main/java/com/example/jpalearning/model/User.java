@@ -33,4 +33,8 @@ public class User {
     private List<Account> accounts;
 
 
+    @OneToMany(mappedBy = "users")
+    private List<DeclaredAssets> assets;
+
+
 }

@@ -24,6 +24,7 @@ public class AccountService {
                 .userEmail(accountPostReqBody.getUserEmail())
                 .sold(accountPostReqBody.getSold())
                 .lastChecked(accountPostReqBody.getLastchecked())
+                .name(accountPostReqBody.getName())
                 .users(userRepository.findById(accountPostReqBody.getUserId())
                 .orElseThrow(()-> new NullPointerException("Not Found")))
                 .build();
