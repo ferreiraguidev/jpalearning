@@ -8,6 +8,7 @@ import javax.validation.constraints.NotNull;
 @Data
 public class UserPostRequestBody {
 
+
     @NotBlank
     private String name;
 
@@ -17,7 +18,7 @@ public class UserPostRequestBody {
     @NotNull
     private Long cpf;
 
-    private Long bankId;
+
 
 
 

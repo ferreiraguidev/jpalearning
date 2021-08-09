@@ -2,7 +2,7 @@ package com.example.jpalearning.service;
 
 import com.example.jpalearning.model.User;
 import com.example.jpalearning.model.UserPostRequestBody;
-import com.example.jpalearning.repository.BankRepository;
+import com.example.jpalearning.repository.AccountRepository;
 import com.example.jpalearning.repository.UserRepository;
 import javassist.tools.web.BadHttpRequest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,9 +15,8 @@ public class UserService {
 
     @Autowired
     UserRepository userRepository;
-
     @Autowired
-    BankRepository bankRepository;
+    AccountRepository accountRepository;
 
 
     public User save(UserPostRequestBody userPostRequestBody) {
@@ -26,8 +25,6 @@ public class UserService {
                 .name(userPostRequestBody.getName())
                 .userEmail(userPostRequestBody.getUserEmail())
                 .cpf(userPostRequestBody.getCpf())
-                .customers(bankRepository.findById(userPostRequestBody.getBankId())
-                        .orElseThrow(() -> new NullPointerException("Not found")))
                 .build();
 
         return userRepository.save(users);

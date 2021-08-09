@@ -8,6 +8,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import java.time.LocalDate;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -20,15 +22,21 @@ public class Account {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(unique = true)
+    private String name;
+
     private Long sold;
 
-    @Column(unique = true)
     private String userEmail;
 
+    private LocalDate lastChecked;
 
+    @NotNull
     @ManyToOne
     @JsonIgnore
-    private Bank bank;
+    private User users;
+
+
 
 
 }

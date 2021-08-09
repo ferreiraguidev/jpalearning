@@ -1,6 +1,5 @@
 package com.example.jpalearning.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -26,13 +25,12 @@ public class User {
     @Column(unique = true)
     @NotBlank
     private String userEmail;
+
     private Long cpf;
 
 
-    @ManyToOne
-    @JsonIgnore
-    private Bank customers;
-
+    @OneToMany(mappedBy = "users")
+    private List<Account> accounts;
 
 
 }
