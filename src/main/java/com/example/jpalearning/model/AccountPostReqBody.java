@@ -1,11 +1,8 @@
 package com.example.jpalearning.model;
 
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
@@ -25,9 +22,6 @@ public class AccountPostReqBody {
 
     @NotNull
     private Long userId;
-
-
-
 
 
 }

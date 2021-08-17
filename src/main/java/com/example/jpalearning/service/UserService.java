@@ -4,7 +4,6 @@ import com.example.jpalearning.model.User;
 import com.example.jpalearning.model.UserPostRequestBody;
 import com.example.jpalearning.repository.AccountRepository;
 import com.example.jpalearning.repository.UserRepository;
-import javassist.tools.web.BadHttpRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

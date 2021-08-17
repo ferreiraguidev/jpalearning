@@ -22,13 +22,13 @@ public class AccountController {
 
 
     @PostMapping("accounts")
-    public ResponseEntity<Account> save(@RequestBody AccountPostReqBody accountPostReqBody){
+    public ResponseEntity<Account> save(@RequestBody AccountPostReqBody accountPostReqBody) {
         return new ResponseEntity<>(accountService.save(accountPostReqBody), HttpStatus.OK);
 
     }
 
     @GetMapping("accounts")
-    public List<Account> accountList(){
+    public List<Account> accountList() {
         return accountService.listAccounts();
 
     }
