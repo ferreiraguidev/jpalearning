@@ -31,7 +31,7 @@ public class Account {
 
     private LocalDate lastChecked;
 
-    @NotNull
+//    @NotNull
     @ManyToOne
     @JsonIgnore
     private User users;
